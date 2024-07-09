@@ -1,8 +1,15 @@
+import Benefit from "./Benefit";
+import Gallery from "./Gallery";
+import Hero from "./Hero";
 
 const Homepage = () => {
   return (
-    <div className="bg-red-500">Homepage</div>
-  )
-}
+    <div>
+      <Hero></Hero>
+      <Benefit></Benefit>
+      <Gallery></Gallery>
+    </div>
+  );
+};
 
-export default Homepage
+export default Homepage;

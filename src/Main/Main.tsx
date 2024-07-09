@@ -4,7 +4,7 @@ import { Navbar } from "./Home/Navbar";
 
 const Main = () => {
   return (
-    <div className="h-[100vh] bg-[#fafffc] ">
+    <div className="bg-[#fdffea]">
       <Navbar></Navbar>
     <Outlet></Outlet>
       <Footer></Footer>

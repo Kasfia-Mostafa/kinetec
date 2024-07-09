@@ -31,7 +31,7 @@ export const Navbar = () => {
             isPending
               ? "pending"
               : isActive
-              ? "py-3 ps-px sm:px-3 font-medium text-emerald-600"
+              ? "py-3 ps-px sm:px-3 font-medium text-yellow-600"
               : "py-3 ps-px sm:px-3 font-medium text-gray-500"
           }
         >
@@ -45,7 +45,7 @@ export const Navbar = () => {
             isPending
               ? "pending"
               : isActive
-              ? "py-3 ps-px sm:px-3 font-medium text-emerald-600"
+              ? "py-3 ps-px sm:px-3 font-medium text-yellow-600"
               : "py-3 ps-px sm:px-3 font-medium text-gray-500"
           }
         >
@@ -59,7 +59,7 @@ export const Navbar = () => {
             isPending
               ? "pending"
               : isActive
-              ? "py-3 ps-px sm:px-3 font-medium text-emerald-600"
+              ? "py-3 ps-px sm:px-3 font-medium text-yellow-600"
               : "py-3 ps-px sm:px-3 font-medium text-gray-500"
           }
         >
@@ -72,7 +72,7 @@ export const Navbar = () => {
   return (
     <nav className="flex items-center justify-between px-4 py-2 text-gray-500 mb-24">
       <div>
-        <p className="bg-gradient-to-tr from-emerald-900 to-emerald-200 py-2 px-3 rounded-full font-kinetec text-slate-100 w-40">
+        <p className="bg-gradient-to-tr from-yellow-700 to-amber-300 py-2 px-3 rounded font-kinetec text-slate-100 w-40">
           Kinetec
         </p>
       </div>
@@ -86,7 +86,7 @@ export const Navbar = () => {
       >
         <RiMenu3Line className="cursor-pointer text-xl font-semibold"></RiMenu3Line>
         {dropDownState && (
-          <ul className=" z-10 p-5 rounded-3xl gap-2  bg-green-50  absolute right-0 top-11 flex w-[200px] flex-col  text-base ">
+          <ul className=" z-10 p-5 rounded-3xl gap-2  bg-yellow-100  absolute right-0 top-11 flex w-[200px] flex-col  text-base ">
             {navLink}
           </ul>
         )}
