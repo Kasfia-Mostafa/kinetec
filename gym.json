@@ -1,0 +1,182 @@
+[
+    {
+        "name": "Treadmill",
+        "image": "https://i.ibb.co/5rsGXmz/intenza-fitness-IEWZJO6o-W9-Q-unsplash.jpg",
+        "price": 1200.00,
+        "quantity": 10,
+        "rating": 4.5,
+        "description": "A high-quality treadmill with various speed settings and heart rate monitoring.",
+        "category": "Cardio Equipment"
+    },
+    {
+        "name": "Dumbbells Set",
+        "image": "https://i.ibb.co/1LZhYpd/vd-photography-H-qx-KCedhcc-unsplash.jpg",
+        "price": 150.00,
+        "quantity": 50,
+        "rating": 4.8,
+        "description": "A set of adjustable dumbbells ranging from 5 to 50 pounds.",
+        "category": "Strength Training"
+    },
+    {
+        "name": "Stationary Bike",
+        "image": "https://i.ibb.co/8K818Gs/abhishek-dutta-2pq-Poj-BNq0-Y-unsplash.jpg",
+        "price": 800.00,
+        "quantity": 15,
+        "rating": 4.3,
+        "description": "A stationary bike with adjustable resistance and a built-in display.",
+        "category": "Cardio Equipment"
+    },
+    {
+        "name": "Kettlebell Set",
+        "image": "https://i.ibb.co/1zfwwdR/alora-griffiths-hv-Fr-A-i-KQd0-unsplash.jpg",
+        "price": 200.00,
+        "quantity": 25,
+        "rating": 4.7,
+        "description": "A set of kettlebells ranging from 5 to 40 pounds.",
+        "category": "Strength Training"
+    },
+    {
+        "name": "Rowing Machine",
+        "image": "https://i.ibb.co/SrFh4LP/OIP.jpg",
+        "price": 950.00,
+        "quantity": 8,
+        "rating": 4.4,
+        "description": "A rowing machine with adjustable resistance and a smooth gliding seat.",
+        "category": "Cardio Equipment"
+    },
+    {
+        "name": "Pull-Up Bar",
+        "image": "https://i.ibb.co/Hr436Tv/Pull-Up-Bar.jpg",
+        "price": 100.00,
+        "quantity": 40,
+        "rating": 4.6,
+        "description": "A sturdy pull-up bar that can be mounted on a door frame.",
+        "category": "Strength Training"
+    },
+    {
+        "name": "Yoga Mat",
+        "image": "https://i.ibb.co/6PYkJLt/Yoga-Mat.jpg",
+        "price": 30.00,
+        "quantity": 100,
+        "rating": 4.9,
+        "description": "A high-density yoga mat that provides excellent cushioning and grip.",
+        "category": "Yoga & Pilates"
+    },
+    {
+        "name": "Resistance Bands",
+        "image": "https://i.ibb.co/Kh37B3q/Resistance-Bands.jpg",
+        "price": 25.00,
+        "quantity": 80,
+        "rating": 4.7,
+        "description": "A set of resistance bands with varying levels of resistance.",
+        "category": "Accessories"
+    },
+    {
+        "name": "Weight Bench",
+        "image": "https://i.ibb.co/8XXV56W/Weight-Bench.jpg",
+        "price": 300.00,
+        "quantity": 20,
+        "rating": 4.5,
+        "description": "An adjustable weight bench for various strength training exercises.",
+        "category": "Strength Training"
+    },
+    {
+        "name": "Jump Rope",
+        "image": "https://i.ibb.co/LPGhcQW/Jump-Rope.jpg",
+        "price": 15.00,
+        "quantity": 150,
+        "rating": 4.8,
+        "description": "A high-speed jump rope with adjustable length and comfortable handles.",
+        "category": "Accessories"
+    },
+    {
+        "name": "Elliptical Trainer",
+        "image": "https://images.unsplash.com/photo-1517836357463-d25dfeac3438",
+        "price": 1000.00,
+        "quantity": 12,
+        "rating": 4.3,
+        "description": "An elliptical trainer with multiple resistance levels and a digital display.",
+        "category": "Cardio Equipment"
+    },
+    {
+        "name": "Medicine Ball",
+        "image": "https://images.unsplash.com/photo-1607330285486-35d0b52a4b06",
+        "price": 40.00,
+        "quantity": 30,
+        "rating": 4.6,
+        "description": "A durable medicine ball available in various weights for strength training.",
+        "category": "Strength Training"
+    },
+    {
+        "name": "Ab Roller",
+        "image": "https://images.unsplash.com/photo-1597566101354-33217e1ba48f",
+        "price": 20.00,
+        "quantity": 60,
+        "rating": 4.7,
+        "description": "An ab roller for effective abdominal workouts with non-slip handles.",
+        "category": "Strength Training"
+    },
+    {
+        "name": "Foam Roller",
+        "image": "https://images.unsplash.com/photo-1579758629930-381c52dd42ec",
+        "price": 25.00,
+        "quantity": 70,
+        "rating": 4.8,
+        "description": "A high-density foam roller for muscle recovery and deep tissue massage.",
+        "category": "Yoga & Pilates"
+    },
+    {
+        "name": "Battle Ropes",
+        "image": "https://images.unsplash.com/photo-1605296867304-46d5465a13f1",
+        "price": 60.00,
+        "quantity": 20,
+        "rating": 4.5,
+        "description": "Heavy-duty battle ropes for high-intensity training and cardio workouts.",
+        "category": "Cardio Equipment"
+    },
+    {
+        "name": "Punching Bag",
+        "image": "https://images.unsplash.com/photo-1579758629930-381c52dd42ec",
+        "price": 150.00,
+        "quantity": 15,
+        "rating": 4.6,
+        "description": "A durable punching bag suitable for boxing and kickboxing training.",
+        "category": "Strength Training"
+    },
+    {
+        "name": "Power Rack",
+        "image": "https://images.unsplash.com/photo-1599058917211-04efb2e4d2c4",
+        "price": 500.00,
+        "quantity": 5,
+        "rating": 4.8,
+        "description": "A heavy-duty power rack for safe and effective weightlifting.",
+        "category": "Strength Training"
+    },
+    {
+        "name": "Stepper",
+        "image": "https://images.unsplash.com/photo-1560347876-aeef00ee58a1",
+        "price": 90.00,
+        "quantity": 25,
+        "rating": 4.4,
+        "description": "A compact stepper with adjustable resistance levels for cardio workouts.",
+        "category": "Cardio Equipment"
+    },
+    {
+        "name": "Exercise Ball",
+        "image": "https://images.unsplash.com/photo-1517836357463-d25dfeac3438",
+        "price": 20.00,
+        "quantity": 40,
+        "rating": 4.7,
+        "description": "A durable exercise ball for stability and core strengthening exercises.",
+        "category": "Yoga & Pilates"
+    },
+    {
+        "name": "Suspension Trainer",
+        "image": "https://images.unsplash.com/photo-1607330285486-35d0b52a4b06",
+        "price": 130.00,
+        "quantity": 10,
+        "rating": 4.9,
+        "description": "A suspension trainer for full-body workouts using bodyweight resistance.",
+        "category": "Strength Training"
+    }
+]

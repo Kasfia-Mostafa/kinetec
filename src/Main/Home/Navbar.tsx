@@ -40,7 +40,7 @@ export const Navbar = () => {
       </li>
       <li>
         <NavLink
-          to="/equipment"
+          to="/products"
           className={({ isActive, isPending }) =>
             isPending
               ? "pending"
@@ -72,7 +72,8 @@ export const Navbar = () => {
   return (
     <nav className="flex items-center justify-between px-4 py-2 text-gray-500 mb-24">
       <div>
-        <p className="bg-gradient-to-tr from-yellow-700 to-amber-300 py-2 px-3 rounded font-kinetec text-slate-100 w-40">
+        <p className="flex gap-2 bg-gradient-to-tr from-yellow-600 to-amber-300 mt-2 py-2 px-3 rounded font-kinetec text-slate-100 w-48">
+          <img src="/src/assets/dumbell.ico" className="size-5" alt="" />
           Kinetec
         </p>
       </div>

@@ -7,9 +7,10 @@ const Footer = () => {
       <div className="text-center">
         <div>
           <a className="flex justify-center">
-          <p className="bg-gradient-to-tr from-yellow-700 to-amber-300 py-2 px-3 rounded font-kinetec text-slate-100 w-40">
-          Kinetec
-        </p>
+            <p className="flex gap-2 bg-gradient-to-tr from-yellow-600 to-amber-300 py-2 px-3 rounded font-kinetec text-slate-100 w-48">
+              <img src="/src/assets/dumbell.ico" className="size-5" alt="" />
+              Kinetec
+            </p>
           </a>
         </div>
 

@@ -1,10 +1,10 @@
 const AboutUsPage = () => {
   return (
     <div className="space-y-10">
-      <div className="bg-amber-300">
+      <div className="bg-amber-200">
         <div className="max-w-5xl px-4 xl:px-0 py-10 lg:pt-20 lg:pb-20 mx-auto">
           <div className="max-w-3xl mb-10 lg:mb-14">
-            <h2 className="text-slate-50 font-semibold text-2xl md:text-4xl md:leading-tight">
+            <h2 className="text-slate-50 bg-yellow-500 p-2 font-semibold text-2xl md:text-4xl md:leading-tight">
               About Us
             </h2>
             <p className="mt-1 text-slat-700">
@@ -24,7 +24,7 @@ const AboutUsPage = () => {
             <div className="aspect-w-16 aspect-h-9 lg:aspect-none">
               <img
                 className="w-full object-cover rounded-xl"
-                src="https://images.unsplash.com/photo-1587614203976-365c74645e83?q=80&w=480&h=600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src="https://i.ibb.co/gtWvgxf/samuel-girven-2e4lb-LTq-PIo-unsplash.jpg"
                 alt="Image Description"
               />
             </div>
