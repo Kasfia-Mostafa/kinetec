@@ -5,7 +5,7 @@
         "price": 1200.00,
         "quantity": 10,
         "rating": 4.5,
-        "description": "A high-quality treadmill with various speed settings and heart rate monitoring.",
+        "description": "This high-quality treadmill is perfect for users looking to enhance their cardio fitness. It comes equipped with various speed settings to cater to all fitness levels, from walking to running. The heart rate monitoring feature ensures you stay in your target heart rate zone, optimizing your workout efficiency. The treadmill also includes pre-programmed workouts and a cushioned deck to minimize impact on your joints.",
         "category": "Cardio Equipment"
     },
     {
@@ -14,7 +14,7 @@
         "price": 150.00,
         "quantity": 50,
         "rating": 4.8,
-        "description": "A set of adjustable dumbbells ranging from 5 to 50 pounds.",
+        "description": "This set of adjustable dumbbells is a must-have for any strength training regimen. Ranging from 5 to 50 pounds, these dumbbells can be customized to suit your specific workout needs. The ergonomic handles provide a comfortable grip, while the durable construction ensures they can withstand intense training sessions. Perfect for a variety of exercises, including bicep curls, shoulder presses, and lunges.",
         "category": "Strength Training"
     },
     {
@@ -23,7 +23,7 @@
         "price": 800.00,
         "quantity": 15,
         "rating": 4.3,
-        "description": "A stationary bike with adjustable resistance and a built-in display.",
+        "description": "This stationary bike is designed to provide a smooth and effective cardio workout. It features adjustable resistance levels, allowing you to increase the intensity as your fitness improves. The built-in display tracks your speed, distance, time, and calories burned, helping you monitor your progress. The comfortable seat and handlebars are fully adjustable to ensure a perfect fit for any user.",
         "category": "Cardio Equipment"
     },
     {
@@ -32,7 +32,7 @@
         "price": 200.00,
         "quantity": 25,
         "rating": 4.7,
-        "description": "A set of kettlebells ranging from 5 to 40 pounds.",
+        "description": "This set of kettlebells is ideal for enhancing your strength and conditioning workouts. Ranging from 5 to 40 pounds, these kettlebells are perfect for exercises like swings, squats, and deadlifts. The sturdy construction ensures they can handle even the most intense training sessions, while the comfortable grips provide a secure hold. Kettlebell training helps improve cardiovascular health, build muscle, and enhance functional fitness.",
         "category": "Strength Training"
     },
     {
@@ -41,7 +41,7 @@
         "price": 950.00,
         "quantity": 8,
         "rating": 4.4,
-        "description": "A rowing machine with adjustable resistance and a smooth gliding seat.",
+        "description": "Experience a full-body workout with this top-of-the-line rowing machine. Featuring adjustable resistance levels, this machine can be tailored to your fitness level, providing a challenging workout every time. The smooth gliding seat ensures a comfortable rowing motion, while the built-in monitor tracks your strokes, distance, time, and calories burned. Perfect for improving cardiovascular health and building muscle strength.",
         "category": "Cardio Equipment"
     },
     {
@@ -50,7 +50,7 @@
         "price": 100.00,
         "quantity": 40,
         "rating": 4.6,
-        "description": "A sturdy pull-up bar that can be mounted on a door frame.",
+        "description": "Enhance your upper body strength with this sturdy pull-up bar. Designed to be mounted on a door frame, this bar allows you to perform pull-ups, chin-ups, and other exercises that target your back, shoulders, and arms. The durable construction ensures stability and safety, while the comfortable grips provide a secure hold during your workouts. Easy to install and perfect for any home gym.",
         "category": "Strength Training"
     },
     {
@@ -59,7 +59,7 @@
         "price": 30.00,
         "quantity": 100,
         "rating": 4.9,
-        "description": "A high-density yoga mat that provides excellent cushioning and grip.",
+        "description": "This high-density yoga mat is perfect for all types of yoga and pilates exercises. It provides excellent cushioning and support, reducing the impact on your joints during your practice. The non-slip surface ensures stability, even during the most intense poses. Lightweight and easy to roll up, this mat is also convenient to carry and store. Ideal for home or studio use.",
         "category": "Yoga & Pilates"
     },
     {
@@ -68,7 +68,7 @@
         "price": 25.00,
         "quantity": 80,
         "rating": 4.7,
-        "description": "A set of resistance bands with varying levels of resistance.",
+        "description": "This set of resistance bands offers a versatile and portable way to enhance your workouts. With varying levels of resistance, these bands are perfect for strength training, stretching, and rehabilitation exercises. The durable construction ensures they can withstand repeated use, while the lightweight design makes them easy to carry with you anywhere. Great for targeting specific muscle groups and improving flexibility.",
         "category": "Accessories"
     },
     {
@@ -77,7 +77,7 @@
         "price": 300.00,
         "quantity": 20,
         "rating": 4.5,
-        "description": "An adjustable weight bench for various strength training exercises.",
+        "description": "This adjustable weight bench is a crucial addition to any strength training setup. With multiple incline and decline positions, it allows you to perform a wide range of exercises, including bench presses, dumbbell rows, and more. The sturdy construction provides stability during heavy lifts, while the padded surface ensures comfort. Perfect for home gyms and suitable for all fitness levels.",
         "category": "Strength Training"
     },
     {
@@ -86,97 +86,97 @@
         "price": 15.00,
         "quantity": 150,
         "rating": 4.8,
-        "description": "A high-speed jump rope with adjustable length and comfortable handles.",
+        "description": "Boost your cardiovascular fitness with this high-speed jump rope. Featuring adjustable length, it can be customized to suit users of all heights. The comfortable handles provide a secure grip, while the durable rope ensures smooth and fast rotations. Ideal for improving coordination, agility, and endurance. Lightweight and portable, this jump rope is perfect for workouts at home, the gym, or on the go.",
         "category": "Accessories"
     },
     {
         "name": "Elliptical Trainer",
-        "image": "https://images.unsplash.com/photo-1517836357463-d25dfeac3438",
+        "image": "https://i.ibb.co/7zFKZyK/Elliptical-Trainer.jpg",
         "price": 1000.00,
         "quantity": 12,
         "rating": 4.3,
-        "description": "An elliptical trainer with multiple resistance levels and a digital display.",
+        "description": "This elliptical trainer offers a low-impact workout that effectively targets your entire body. With multiple resistance levels, you can easily adjust the intensity to match your fitness goals. The digital display tracks your progress, including time, distance, speed, and calories burned. The smooth elliptical motion reduces strain on your joints, making it ideal for users of all ages and fitness levels.",
         "category": "Cardio Equipment"
     },
     {
         "name": "Medicine Ball",
-        "image": "https://images.unsplash.com/photo-1607330285486-35d0b52a4b06",
+        "image": "https://i.ibb.co/mS8XZby/OIP.jpg",
         "price": 40.00,
         "quantity": 30,
         "rating": 4.6,
-        "description": "A durable medicine ball available in various weights for strength training.",
+        "description": "This durable medicine ball is perfect for adding resistance to your workouts. Available in various weights, it can be used for a wide range of exercises, including core strengthening, balance training, and explosive movements. The textured surface provides a secure grip, while the robust construction ensures it can handle intense use. Ideal for both individual and partner workouts.",
         "category": "Strength Training"
     },
     {
         "name": "Ab Roller",
-        "image": "https://images.unsplash.com/photo-1597566101354-33217e1ba48f",
+        "image": "https://i.ibb.co/syLCB41/Ab-Roller.jpg",
         "price": 20.00,
         "quantity": 60,
         "rating": 4.7,
-        "description": "An ab roller for effective abdominal workouts with non-slip handles.",
+        "description": "This ab roller is designed to provide an effective abdominal workout. The non-slip handles ensure a secure grip, while the durable wheel rolls smoothly on any surface. Ideal for strengthening your core muscles and improving overall stability. Compact and easy to use, this ab roller is perfect for home workouts and can be used by fitness enthusiasts of all levels.",
         "category": "Strength Training"
     },
     {
         "name": "Foam Roller",
-        "image": "https://images.unsplash.com/photo-1579758629930-381c52dd42ec",
+        "image": "https://i.ibb.co/FmSdG8Y/Foam-Roller.jpg",
         "price": 25.00,
         "quantity": 70,
         "rating": 4.8,
-        "description": "A high-density foam roller for muscle recovery and deep tissue massage.",
+        "description": "This high-density foam roller is an essential tool for muscle recovery and deep tissue massage. It helps alleviate muscle soreness, improve flexibility, and enhance blood circulation. The textured surface provides a targeted massage, effectively releasing tension and knots. Lightweight and portable, this foam roller is perfect for use at home, the gym, or during travel.",
         "category": "Yoga & Pilates"
     },
     {
         "name": "Battle Ropes",
-        "image": "https://images.unsplash.com/photo-1605296867304-46d5465a13f1",
+        "image": "https://i.ibb.co/QbbcwND/Battle-Ropes.jpg",
         "price": 60.00,
         "quantity": 20,
         "rating": 4.5,
-        "description": "Heavy-duty battle ropes for high-intensity training and cardio workouts.",
+        "description": "These heavy-duty battle ropes are perfect for high-intensity training and cardio workouts. The durable construction ensures they can withstand intense use, while the comfortable grips provide a secure hold. Ideal for improving cardiovascular endurance, strength, and power. Easy to set up and use, these battle ropes are perfect for home gyms and outdoor workouts.",
         "category": "Cardio Equipment"
     },
     {
         "name": "Punching Bag",
-        "image": "https://images.unsplash.com/photo-1579758629930-381c52dd42ec",
+        "image": "https://i.ibb.co/nCngqWc/Punching-Bag.jpg",
         "price": 150.00,
         "quantity": 15,
         "rating": 4.6,
-        "description": "A durable punching bag suitable for boxing and kickboxing training.",
+        "description": "This durable punching bag is designed for boxing and kickboxing training. The tough exterior can withstand powerful strikes, while the sturdy construction ensures stability. Perfect for improving strength, coordination, and cardiovascular fitness. Suitable for both beginners and experienced fighters, this punching bag is a great addition to any home gym.",
         "category": "Strength Training"
     },
     {
         "name": "Power Rack",
-        "image": "https://images.unsplash.com/photo-1599058917211-04efb2e4d2c4",
+        "image": "https://i.ibb.co/VYqJ1pk/Power-Rack.jpg",
         "price": 500.00,
         "quantity": 5,
         "rating": 4.8,
-        "description": "A heavy-duty power rack for safe and effective weightlifting.",
+        "description": "This heavy-duty power rack is essential for safe and effective weightlifting. The robust construction provides stability, while the adjustable safety bars ensure you can lift with confidence. Ideal for performing squats, bench presses, and other strength training exercises. Perfect for home gyms and suitable for all fitness levels.",
         "category": "Strength Training"
     },
     {
         "name": "Stepper",
-        "image": "https://images.unsplash.com/photo-1560347876-aeef00ee58a1",
+        "image": "https://i.ibb.co/mbJn5g4/Stepper.jpg",
         "price": 90.00,
         "quantity": 25,
         "rating": 4.4,
-        "description": "A compact stepper with adjustable resistance levels for cardio workouts.",
+        "description": "This compact stepper is perfect for effective cardio workouts. Featuring adjustable resistance levels, it allows you to tailor your workout to your fitness level. The compact design makes it easy to use at home, while the durable construction ensures long-lasting performance. Ideal for improving cardiovascular health and burning calories.",
         "category": "Cardio Equipment"
     },
     {
         "name": "Exercise Ball",
-        "image": "https://images.unsplash.com/photo-1517836357463-d25dfeac3438",
+        "image": "https://i.ibb.co/zfqd1v4/Exercise-Ball.jpg",
         "price": 20.00,
         "quantity": 40,
         "rating": 4.7,
-        "description": "A durable exercise ball for stability and core strengthening exercises.",
+        "description": "This durable exercise ball is perfect for stability and core strengthening exercises. The anti-burst construction ensures safety, while the textured surface provides a secure grip. Ideal for improving balance, flexibility, and overall fitness. Perfect for use at home or in the gym, and suitable for users of all fitness levels.",
         "category": "Yoga & Pilates"
     },
     {
         "name": "Suspension Trainer",
-        "image": "https://images.unsplash.com/photo-1607330285486-35d0b52a4b06",
+        "image": "https://i.ibb.co/80D1zFw/Suspension-Trainer.jpg",
         "price": 130.00,
         "quantity": 10,
         "rating": 4.9,
-        "description": "A suspension trainer for full-body workouts using bodyweight resistance.",
+        "description": "This suspension trainer is perfect for full-body workouts using bodyweight resistance. The adjustable straps allow for a wide range of exercises, targeting all major muscle groups. The durable construction ensures safety and stability, while the portable design makes it easy to use anywhere. Ideal for enhancing strength, flexibility, and endurance.",
         "category": "Strength Training"
     }
 ]
