@@ -8,3 +8,4 @@ export interface TProducts {
   description: string;
   category: string;
 }
+

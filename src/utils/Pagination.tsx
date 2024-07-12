@@ -1,10 +1,12 @@
+import { TPageNum } from "@/Types/PaginationTypes";
+
 const Pagination = ({
   totalPosts,
   postsPerPage,
   setCurrentPage,
   currentPage,
-}) => {
-  let pages = [];
+}: TPageNum) => {
+  const pages = [];
 
   for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
     pages.push(i);

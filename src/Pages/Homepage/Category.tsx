@@ -5,7 +5,7 @@ const Category = () => {
   return (
     <div className="my-80 grid place-content-center">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 ">
-        <div className="cursor-pointer transition-all duration-500 hover:translate-y-2 w-72 h-40 bg-slate-50 rounded-lg shadow-xl flex flex-row items-center justify-evenly gap-4 px-4">
+        <div className="cursor-pointer border-t-4 border-yellow-300 transition-all duration-500 hover:translate-y-2 w-72 h-40 bg-slate-50 rounded-lg shadow-xl flex flex-row items-center justify-evenly gap-4 px-4">
           <div className="flex gap-3">
             <CgGym className="text-5xl text-yellow-500" />
             <div>
@@ -19,7 +19,7 @@ const Category = () => {
             </div>
           </div>
         </div>
-        <div className="cursor-pointer transition-all duration-500 hover:translate-y-2 w-72 h-40 bg-slate-50 rounded-lg shadow-xl flex flex-row items-center justify-evenly gap-4 px-4">
+        <div className="cursor-pointer border-l-4 border-yellow-300 transition-all duration-500 hover:translate-y-2 w-72 h-40 bg-slate-50 rounded-lg shadow-xl flex flex-row items-center justify-evenly gap-4 px-4">
           <div className="flex gap-3">
             <CgGym className="text-5xl text-yellow-500" />
             <div>
@@ -33,7 +33,7 @@ const Category = () => {
             </div>
           </div>
         </div>
-        <div className="cursor-pointer transition-all duration-500 hover:translate-y-2 w-72 h-40 bg-slate-50 rounded-lg shadow-xl flex flex-row items-center justify-evenly gap-4 px-4">
+        <div className="cursor-pointer border-t-4 border-yellow-300 transition-all duration-500 hover:translate-y-2 w-72 h-40 bg-slate-50 rounded-lg shadow-xl flex flex-row items-center justify-evenly gap-4 px-4">
           <div className="flex gap-3">
             <CgGym className="text-5xl text-yellow-500" />
             <div>
@@ -47,7 +47,7 @@ const Category = () => {
             </div>
           </div>
         </div>
-        <div className="cursor-pointer transition-all duration-500 hover:translate-y-2 w-72 h-40 bg-slate-50 rounded-lg shadow-xl flex flex-row items-center justify-evenly gap-4 px-4">
+        <div className="cursor-pointer border-l-4 border-yellow-300 transition-all duration-500 hover:translate-y-2 w-72 h-40 bg-slate-50 rounded-lg shadow-xl flex flex-row items-center justify-evenly gap-4 px-4">
           <div className="flex gap-3">
             <CgGym className="text-5xl text-yellow-500" />
             <div>
