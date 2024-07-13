@@ -4,7 +4,7 @@ export const baseApi = createApi({
   reducerPath: "baseApi",
   baseQuery: fetchBaseQuery({
     baseUrl:
-      "https://vercel.com/kasfia-mostafa-projects/kinetec-server-gym/api",
+      "https://kinetec-server-gym.vercel.app/api",
   }),
   endpoints: (builder) => ({
     getProducts: builder.query({
