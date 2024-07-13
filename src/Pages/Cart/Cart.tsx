@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
 import Button from "@/utils/Button";
 
+
 const Cart = () => {
   const dispatch = useDispatch<AppDispatch>();
   const cartItems = useSelector((state: RootState) => state.cart.items);
@@ -14,7 +15,7 @@ const Cart = () => {
 
   return (
     <div>
-      <div className="container mx-auto mt-10">
+      <div className="mx-16 mt-10 ">
         <div className="sm:flex shadow-md my-10">
           <div className="w-full sm:w-3/4 bg-white px-10 py-10">
             <div className="flex justify-between border-b pb-8">
@@ -32,13 +33,9 @@ const Cart = () => {
                   <img
                     src={item.image}
                     alt={item.name}
-                    className="size- object-center object-cover md:block hidden"
+                    className="size-40 object-center object-cover md:block hidden"
                   />
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    className="md:hidden w-full h-full object-center object-cover"
-                  />
+               
                 </div>
                 <div className="md:pl-3 md:w-8/12 2xl:w-3/4 flex flex-col justify-center">
                   <div className="flex items-center justify-between w-full">
@@ -119,7 +116,9 @@ const Cart = () => {
                 <span>${totalPrice.toFixed(2)}</span>
               </div>
               <div className="flex justify-center">
-                <Button></Button>
+               <Link to={`/payment`}>
+               <Button></Button>
+               </Link>
               </div>
             </div>
           </div>

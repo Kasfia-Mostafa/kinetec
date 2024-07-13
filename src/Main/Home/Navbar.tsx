@@ -1,7 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { RiMenu3Line } from "react-icons/ri";
 import { NavLink } from "react-router-dom";
-import { BsCart2 } from "react-icons/bs";
 
 export const Navbar = () => {
   const [dropDownState, setDropDownState] = useState(false);
