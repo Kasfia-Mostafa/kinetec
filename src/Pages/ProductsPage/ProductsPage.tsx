@@ -159,6 +159,7 @@ function ProductsPage() {
           </div>
         </div>
 
+{/* Products card */}
         <div className="grid place-content-center col-span-3">
           <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-14 mx-4 my-5">
             {currentPosts.map((product: TProducts) => (
