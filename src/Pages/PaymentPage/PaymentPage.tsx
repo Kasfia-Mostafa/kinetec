@@ -71,11 +71,7 @@ const PaymentPage = () => {
             </div>
           </div>
 
-          <input
-            type="submit"
-            value="Proceed to checkout"
-            className="submit-btn"
-          />
+          <button className="submit-btn" type="submit">Proceed to checkout</button>
         </form>
       </div>
     </div>

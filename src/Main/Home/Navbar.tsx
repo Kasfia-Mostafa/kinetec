@@ -81,6 +81,20 @@ export const Navbar = () => {
           My Cart
         </NavLink>
       </li>
+      <li>
+        <NavLink
+          to="/productManagement" // Ensure this path correctly points to your cart page
+          className={({ isActive, isPending }) =>
+            isPending
+              ? "pending"
+              : isActive
+                ? "py-3 ps-px sm:px-3 font-medium text-yellow-600"
+                : "py-3 ps-px sm:px-3 font-medium text-gray-500"
+          }
+        >
+        Product Management
+        </NavLink>
+      </li>
     </>
   );
 

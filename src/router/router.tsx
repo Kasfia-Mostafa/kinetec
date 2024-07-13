@@ -4,9 +4,10 @@ import Homepage from "@/Pages/Homepage/Homepage";
 import ProductDetails from "@/Pages/ProductDetails/ProductDetails";
 import ProductsPage from "@/Pages/ProductsPage/ProductsPage";
 import Cart from "@/Pages/Cart/Cart";
-
 import { createBrowserRouter } from "react-router-dom";
 import PaymentPage from "@/Pages/PaymentPage/PaymentPage";
+import ProductTable from "@/Pages/ProductManagement/ProductTable";
+import ProductManagement from "@/Pages/ProductManagement/ProductManagement";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,14 @@ const router = createBrowserRouter([
       {
         path:'/about',
         element:<AboutUsPage />
+      },
+      {
+        path:'/productManagement',
+        element:<ProductTable />
+      },
+      {
+        path:'/newProduct',
+        element:<ProductManagement />
       },
       {
         path:'/cart',

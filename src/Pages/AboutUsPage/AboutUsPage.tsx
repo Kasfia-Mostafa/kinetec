@@ -48,9 +48,16 @@ const AboutUsPage = () => {
                 <div className="grow pt-0.5 pb-8 sm:pb-12">
                   <p className="text-sm lg:text-base text-slate-700">
                     <span className="text-yellow-900 font-semibold">
-                    Premium Quality:{" "}
+                      Company Overview:{" "}
                     </span>
-                    We prioritize quality in every piece of equipment we offer. Our products are made from superior materials, ensuring they stand the test of time and deliver exceptional performance.
+                    Our mission is to empower individuals to achieve their
+                    fitness goals by providing durable, high-performance
+                    equipment. Our vision is to be the leading provider of
+                    innovative and ergonomic fitness solutions worldwide. At
+                    Kinetec, we are dedicated to excellence and customer
+                    satisfaction from the very beginning, continually striving
+                    to improve and expand our offerings to meet the evolving
+                    needs of fitness enthusiasts.{" "}
                   </p>
                 </div>
               </div>
@@ -67,9 +74,29 @@ const AboutUsPage = () => {
                 <div className="grow pt-0.5 pb-8 sm:pb-12">
                   <p className="text-sm lg:text-base text-slate-700">
                     <span className="text-yellow-900 font-semibold">
-                    Innovative Technology:{" "}
+                      Team Introduction:{" "}
                     </span>
-                    Our fitness equipment incorporates the latest advancements in technology, providing you with tools that enhance your workouts and deliver measurable results.
+                    <ul>
+                      <li>
+                        Jane Doe - CEO: Jane is the visionary behind Kinetec.
+                        Her leadership and passion for fitness drive our
+                        company's growth and innovation.
+                      </li>
+                      <li>
+                        John Smith - Head of Product Development: John leads our
+                        product development team, ensuring every product meets
+                        our high standards of quality and innovation. His
+                        expertise in engineering and design is pivotal to our
+                        success.
+                      </li>
+                      <li>
+                        Emily Johnson - Marketing Director: Emily is responsible
+                        for our marketing strategies, helping us reach fitness
+                        enthusiasts worldwide. Her creative approach and deep
+                        understanding of market trends keep Kinetec at the
+                        forefront of the industry.
+                      </li>
+                    </ul>
                   </p>
                 </div>
               </div>
@@ -86,28 +113,16 @@ const AboutUsPage = () => {
                 <div className="grow pt-0.5 pb-8 sm:pb-12">
                   <p className="text-sm md:text-base text-slate-700">
                     <span className="text-yellow-900 font-semibold">
-                    Ergonomic Design:{" "}
+                      Contact Information:{" "}
                     </span>
-                    Each product is designed with user comfort in mind, featuring ergonomic shapes and intuitive interfaces that make your workouts more effective and enjoyable.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-x-5 ms-1">
-                <div className="relative last:after:hidden after:absolute after:top-8 after:bottom-0 after:start-4 after:w-px after:-translate-x-[0.5px] after:bg-neutral-800">
-                  <div className="relative z-10 size-8 flex justify-center items-center">
-                    <span className="flex flex-shrink-0 justify-center items-center size-8 border border-neutral-800 ext-yellow-700 font-semibold text-xs uppercase rounded-full">
-                      4
-                    </span>
-                  </div>
-                </div>
-
-                <div className="grow pt-0.5 pb-8 sm:pb-12">
-                  <p className="text-sm md:text-base text-slate-700">
-                    <span className="text-yellow-900 font-semibold">
-                    Wide Range of Products:{" "}
-                    </span>
-                    From cardio machines to strength training equipment and accessories, we offer a comprehensive range of products to cater to all your fitness needs.
+                    We would love to hear from you! If you have any questions,
+                    feedback, or would like to learn more about our products,
+                    please reach out to us:
+                    <br />
+                    Email: support@kinetec.com
+                    <br />
+                    Phone:(123) 456-7890 Address: 123 Fitness St, Workout City,
+                    Gym State, 12345
                   </p>
                 </div>
               </div>
@@ -140,6 +155,123 @@ const AboutUsPage = () => {
                 </svg>
                 Schedule a call
               </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Test */}
+
+      <div className="overflow-hidden">
+        <div className="relative max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="flex h-auto">
+              <div className="flex flex-col bg-white rounded-xl dark:bg-neutral-900">
+                <div className="flex-auto p-4 md:p-6">
+                  <p className="text-base italic md:text-lg text-gray-800 dark:text-neutral-200">
+                    " I’ve been shopping for home gym equipment for a while, and
+                    this website has been a game-changer. They offer a fantastic
+                    selection of high-quality gear at competitive prices. The
+                    website is easy to navigate, and I love the detailed product
+                    descriptions and customer reviews that helped me make
+                    informed choices. Shipping was quick, and my new treadmill
+                    arrived in perfect condition. Highly recommend! "
+                  </p>
+                </div>
+
+                <div className="p-4 bg-gray-100 rounded-b-xl md:px-7 dark:bg-neutral-800">
+                  <div className="flex items-center">
+                    <div className="flex-shrink-0">
+                      <img
+                        className="size-8 sm:h-[2.875rem] sm:w-[2.875rem] rounded-full"
+                        src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80"
+                        alt="Image Description"
+                      />
+                    </div>
+
+                    <div className="grow ms-3">
+                      <p className="text-sm sm:text-base font-semibold text-gray-800 dark:text-neutral-200">
+                        Josh Tyson
+                      </p>
+                      <p className="text-xs text-gray-500 dark:text-neutral-400">
+                        Product Manager | Capsule
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="flex h-auto">
+              <div className="flex flex-col bg-white rounded-xl dark:bg-neutral-900">
+                <div className="flex-auto p-4 md:p-6">
+                  <p className="text-base italic md:text-lg text-gray-800 dark:text-neutral-200">
+                    " I found the customer service to be outstanding when I had
+                    a question about a product. The website was straightforward,
+                    and my order arrived promptly. However, I noticed that their
+                    range of equipment for strength training is a bit limited
+                    compared to other sites. If they expand their selection,
+                    this would be a five-star experience. "
+                  </p>
+                </div>
+
+                <div className="p-4 bg-gray-100 rounded-b-xl md:px-7 dark:bg-neutral-800">
+                  <div className="flex items-center">
+                    <div className="flex-shrink-0">
+                      <img
+                        className="size-8 sm:h-[2.875rem] sm:w-[2.875rem] rounded-full"
+                        src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80"
+                        alt="Image Description"
+                      />
+                    </div>
+
+                    <div className="grow ms-3">
+                      <p className="text-sm sm:text-base font-semibold text-gray-800 dark:text-neutral-200">
+                        Luisa
+                      </p>
+                      <p className="text-xs text-gray-500 dark:text-neutral-400">
+                        Senior Director of Operations | Fitbit
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex h-auto">
+              <div className="flex flex-col bg-white rounded-xl dark:bg-neutral-900">
+                <div className="flex-auto p-4 md:p-6">
+                  <p className="text-base italic md:text-lg text-gray-800 dark:text-neutral-200">
+                    " From browsing to purchase, the entire process was smooth.
+                    The website is user-friendly, and the product filtering
+                    options made it easy to find exactly what I was looking for.
+                    I was particularly impressed with the detailed size guides
+                    and usage tips for the equipment. My new set of dumbbells
+                    and yoga mat are just as described, and I couldn’t be
+                    happier with my purchase. "
+                  </p>
+                </div>
+
+                <div className="p-4 bg-gray-100 rounded-b-xl md:px-7 dark:bg-neutral-800">
+                  <div className="flex items-center">
+                    <div className="flex-shrink-0">
+                      <img
+                        className="size-8 sm:h-[2.875rem] sm:w-[2.875rem] rounded-full"
+                        src="https://images.unsplash.com/photo-1579017331263-ef82f0bbc748?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=900&h=900&q=80"
+                        alt="Image Description"
+                      />
+                    </div>
+
+                    <div className="grow ms-3">
+                      <p className="text-sm sm:text-base font-semibold text-gray-800 dark:text-neutral-200">
+                        Alisa Williams
+                      </p>
+                      <p className="text-xs text-gray-500 dark:text-neutral-400">
+                        Entrepreneur | Happy customer
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
