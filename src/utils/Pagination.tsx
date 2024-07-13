@@ -1,6 +1,6 @@
 import { TPageNum } from "@/Types/PaginationTypes";
 
-const Pagination = ({
+const Pagination: React.FC<TPageNum> = ({
   totalPosts,
   postsPerPage,
   setCurrentPage,

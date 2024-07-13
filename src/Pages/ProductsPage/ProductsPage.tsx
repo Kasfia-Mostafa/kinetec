@@ -9,17 +9,18 @@ import { useSearchParams } from "react-router-dom";
 const ProductsPage = () => {
   const [searchParams] = useSearchParams();
   const category = searchParams.get("category") || "";
-  const { data, isLoading, isError } = useGetProductsQuery(category);
 
-  const [searchedItems, setSearchedItems] = useState("");
-  const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage] = useState(12);
+  const { data, isLoading, isError } = useGetProductsQuery(category);
+  const products: TProducts[] = data?.data || [];
+
+  const [searchedItems, setSearchedItems] = useState<string>("");
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [postsPerPage] = useState<number>(12);
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
   const [filteredItems, setFilteredItems] = useState<TProducts[]>([]);
   const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
 
-  const products = data?.data || [];
-  const filters = ["Strength Training", "Cardio Equipment", "Yoga & Pilates"];
+  const filters: string[] = ["Strength Training", "Cardio Equipment", "Yoga & Pilates"];
 
   useEffect(() => {
     filterItems();
@@ -46,7 +47,7 @@ const ProductsPage = () => {
   };
 
   const handleFilterChange = (selectedCategory: string) => {
-    setSelectedFilters(prevFilters => 
+    setSelectedFilters(prevFilters =>
       prevFilters.includes(selectedCategory)
         ? prevFilters.filter(el => el !== selectedCategory)
         : [...prevFilters, selectedCategory]

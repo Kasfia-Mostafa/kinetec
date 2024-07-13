@@ -1,5 +1,6 @@
 import { useCreateProductMutation } from '@/redux/api/baseApi';
 import { useState } from 'react';
+import { ChangeEvent, FormEvent } from 'react';
 
 const ProductManagement = () => {
   const [product, setProduct] = useState({
@@ -14,7 +15,7 @@ const ProductManagement = () => {
 
   const [createProduct, { isLoading, isError, isSuccess, error }] = useCreateProductMutation();
 
-  const handleChange = (e) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setProduct((prevProduct) => ({
       ...prevProduct,
@@ -22,15 +23,15 @@ const ProductManagement = () => {
     }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     
-    // Convert price and rating to numbers
+   
     const productToSubmit = {
       ...product,
-      price: parseFloat(product.price), // Convert price to a number
-      rating: parseFloat(product.rating), // Convert rating to a number
-      quantity: parseInt(product.quantity, 10), // Convert quantity to an integer
+      price: parseFloat(product.price), 
+      rating: parseFloat(product.rating), 
+      quantity: parseInt(product.quantity, 10), 
     };
 
     try {
@@ -47,12 +48,22 @@ const ProductManagement = () => {
       });
     } catch (err) {
       console.error('Failed to save the product:', err);
+      
       // Enhanced error handling
-      if (err.data) {
-        console.error('Server response:', err.data);
+      if (err instanceof Error) {
+        console.error('Error message:', err.message);
+      } else {
+        console.error('An unknown error occurred:', err);
       }
-      if (err.status) {
-        console.error('Status code:', err.status);
+      
+      // Additional checks based on the structure of the error
+      if (err && typeof err === 'object') {
+        if ('data' in err) {
+          console.error('Server response:', (err as any).data);
+        }
+        if ('status' in err) {
+          console.error('Status code:', (err as any).status);
+        }
       }
     }
   };
@@ -184,7 +195,7 @@ const ProductManagement = () => {
               >
                 {isLoading ? 'Submitting...' : 'Submit'}
               </button>
-              {isError && <p className="text-red-500">Failed to add the product: {error?.message || 'Unknown error'}</p>}
+              {isError && <p className="text-red-500">Failed to add the product: {getErrorMessage(error)}</p>}
               {isSuccess && <p className="text-green-500">Product added successfully!</p>}
             </form>
           </div>
@@ -192,6 +203,17 @@ const ProductManagement = () => {
       </div>
     </div>
   );
+};
+
+// Function to get a user-friendly error message
+const getErrorMessage = (error: unknown): string => {
+  if (error instanceof Error) {
+    return error.message;
+  } else if (typeof error === 'object' && error !== null) {
+    // Assuming the error object might have 'message' property
+    return (error as any).message || 'An unknown error occurred';
+  }
+  return 'An unknown error occurred';
 };
 
 export default ProductManagement;
