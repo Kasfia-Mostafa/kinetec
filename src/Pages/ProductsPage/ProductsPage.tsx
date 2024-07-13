@@ -4,9 +4,13 @@ import ProductCard from "./ProductCard";
 import { useEffect, useState } from "react";
 import Pagination from "@/utils/Pagination";
 import { TProducts } from "@/Types/ProductsTypes";
+import { useSearchParams } from "react-router-dom";
 
-function ProductsPage() {
-  const { data, isLoading } = useGetProductsQuery({});
+const ProductsPage = () => {
+  const [searchParams] = useSearchParams();
+  const category = searchParams.get("category") || "";
+  const { data, isLoading, isError } = useGetProductsQuery(category);
+
   const [searchedItems, setSearchedItems] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(12);
@@ -15,49 +19,38 @@ function ProductsPage() {
   const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
 
   const products = data?.data || [];
-
   const filters = ["Strength Training", "Cardio Equipment", "Yoga & Pilates"];
 
   useEffect(() => {
-    setFilteredItems(products);
-  }, [products]);
-
-  useEffect(() => {
     filterItems();
-  }, [selectedFilters, products, searchedItems, sortOrder]);
+  }, [selectedFilters, products, searchedItems, sortOrder, category]);
 
   const filterItems = () => {
     let tempItems = [...products];
 
+    if (category) {
+      tempItems = tempItems.filter(product => product.category === category);
+    }
+
     if (selectedFilters.length > 0) {
-      tempItems = tempItems.filter((product) =>
-        selectedFilters.includes(product.category)
-      );
+      tempItems = tempItems.filter(product => selectedFilters.includes(product.category));
     }
 
     if (searchedItems) {
-      tempItems = tempItems.filter((product) =>
-        product.name.toLowerCase().includes(searchedItems.toLowerCase())
-      );
+      tempItems = tempItems.filter(product => product.name.toLowerCase().includes(searchedItems.toLowerCase()));
     }
 
-    if (sortOrder === "asc") {
-      tempItems.sort((a, b) => a.price - b.price);
-    } else {
-      tempItems.sort((a, b) => b.price - a.price);
-    }
+    tempItems.sort((a, b) => sortOrder === "asc" ? a.price - b.price : b.price - a.price);
 
     setFilteredItems(tempItems);
   };
 
   const handleFilterChange = (selectedCategory: string) => {
-    if (selectedFilters.includes(selectedCategory)) {
-      setSelectedFilters(
-        selectedFilters.filter((el) => el !== selectedCategory)
-      );
-    } else {
-      setSelectedFilters([...selectedFilters, selectedCategory]);
-    }
+    setSelectedFilters(prevFilters => 
+      prevFilters.includes(selectedCategory)
+        ? prevFilters.filter(el => el !== selectedCategory)
+        : [...prevFilters, selectedCategory]
+    );
   };
 
   const handleClearFilters = () => {
@@ -71,6 +64,10 @@ function ProductsPage() {
 
   if (isLoading) {
     return <Loader />;
+  }
+
+  if (isError) {
+    return <div>Error loading products.</div>;
   }
 
   return (
@@ -100,9 +97,9 @@ function ProductsPage() {
                 <input
                   type="search"
                   id="default-search"
-                  className="block w-48 lg:w-60 p-4 pl-10 text-sm text-gray-900 border
-                 bg-white border-gray-300 rounded-xl"
-                  placeholder="search equipment..."
+                  aria-label="Search products"
+                  className="block w-48 lg:w-60 p-4 pl-10 text-sm text-gray-900 border bg-white border-gray-300 rounded-xl"
+                  placeholder="Search equipment..."
                   required
                   onChange={(event) => setSearchedItems(event.target.value)}
                 />
@@ -114,37 +111,35 @@ function ProductsPage() {
             <select
               onChange={(e) => setSortOrder(e.target.value as "asc" | "desc")}
               className="p-2 w-48 lg:w-60 bg-white text-slate-600 border border-gray-300 rounded-xl"
+              aria-label="Sort by price"
             >
               <option value="asc">Price: Low to High</option>
               <option value="desc">Price: High to Low</option>
             </select>
           </div>
 
-          {/* Category */}
+          {/* Category Filters */}
           <div className="grid place-content-center lg:ml-6">
             <div>
-              <h1 className="font-bold text-lg text-yellow-500 w-40 lg:w-60  rounded mb-2">
+              <h1 className="font-bold text-lg text-yellow-500 w-40 lg:w-60 rounded mb-2">
                 Category
               </h1>
               <div className="buttons-container">
-                {filters.map((category, idx) => (
-                  <div
-                    key={`filters-${idx}`}
-                    className="flex items-center mt-2"
-                  >
+                {filters.map((filter, idx) => (
+                  <div key={`filters-${idx}`} className="flex items-center mt-2">
                     <input
                       type="checkbox"
                       id={`filter-${idx}`}
-                      value={category}
-                      checked={selectedFilters.includes(category)}
-                      onChange={() => handleFilterChange(category)}
+                      value={filter}
+                      checked={selectedFilters.includes(filter)}
+                      onChange={() => handleFilterChange(filter)}
                       className="form-checkbox text-yellow-500 shrink-0 mt-0.5 border-gray-200 rounded focus:ring-yellow-600 disabled:opacity-50 disabled:pointer-events-none"
                     />
                     <label
                       htmlFor={`filter-${idx}`}
                       className="ml-2 text-md font-semibold text-slate-700 shrink-0 mt-0.5 border-gray-200 rounded focus:ring-yellow-600 disabled:opacity-50 disabled:pointer-events-none"
                     >
-                      {category}
+                      {filter}
                     </label>
                   </div>
                 ))}
@@ -159,7 +154,7 @@ function ProductsPage() {
           </div>
         </div>
 
-{/* Products card */}
+        {/* Products Cards */}
         <div className="grid place-content-center col-span-3">
           <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-14 mx-4 my-5">
             {currentPosts.map((product: TProducts) => (
@@ -178,6 +173,6 @@ function ProductsPage() {
       </div>
     </section>
   );
-}
+};
 
 export default ProductsPage;

@@ -3,12 +3,12 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const baseApi = createApi({
   reducerPath: "baseApi",
   baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:5000/api" }),
-  // tagTypes: ["movies"],
   endpoints: (builder) => ({
     getProducts: builder.query({
-      query: () => ({
-        method: "GET",
+      query: (category) => ({
         url: "/products",
+        method: "GET",
+        params: category ? { category } : {},
       }),
     }),
     getSingleProduct: builder.query({
@@ -20,4 +20,7 @@ export const baseApi = createApi({
   }),
 });
 
-export const { useGetProductsQuery,useGetSingleProductQuery } = baseApi;
+export const {
+  useGetProductsQuery,
+  useGetSingleProductQuery,
+} = baseApi;
