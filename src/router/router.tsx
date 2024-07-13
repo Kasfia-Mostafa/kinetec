@@ -3,6 +3,7 @@ import AboutUsPage from "@/Pages/AboutUsPage/AboutUsPage";
 import Homepage from "@/Pages/Homepage/Homepage";
 import ProductDetails from "@/Pages/ProductDetails/ProductDetails";
 import ProductsPage from "@/Pages/ProductsPage/ProductsPage";
+import Cart from "@/Pages/Cart/Cart";
 
 import { createBrowserRouter } from "react-router-dom";
 
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path:'/about',
         element:<AboutUsPage />
+      },
+      {
+        path:'/cart',
+        element:<Cart />
       }
     ]
   },

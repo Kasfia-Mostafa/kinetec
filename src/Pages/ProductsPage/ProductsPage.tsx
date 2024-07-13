@@ -80,7 +80,7 @@ function ProductsPage() {
           <div className="ml-6 lg:ml-10 mb-10">
             <form>
               <div className="relative mx-auto">
-                <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none rounded-2xl">
                   <svg
                     className="w-4 h-4 text-gray-500 dark:text-gray-400"
                     aria-hidden="true"
@@ -101,7 +101,7 @@ function ProductsPage() {
                   type="search"
                   id="default-search"
                   className="block w-48 lg:w-60 p-4 pl-10 text-sm text-gray-900 border
-                 bg-white border-gray-300 rounded-lg"
+                 bg-white border-gray-300 rounded-xl"
                   placeholder="search equipment..."
                   required
                   onChange={(event) => setSearchedItems(event.target.value)}
@@ -113,7 +113,7 @@ function ProductsPage() {
           <div className="mb-16 lg:ml-10 ml-6">
             <select
               onChange={(e) => setSortOrder(e.target.value as "asc" | "desc")}
-              className="p-2 w-48 lg:w-60 bg-white text-slate-600 border border-gray-300 rounded-lg"
+              className="p-2 w-48 lg:w-60 bg-white text-slate-600 border border-gray-300 rounded-xl"
             >
               <option value="asc">Price: Low to High</option>
               <option value="desc">Price: High to Low</option>
@@ -122,8 +122,8 @@ function ProductsPage() {
 
           {/* Category */}
           <div className="grid place-content-center lg:ml-6">
-            <div className="border border-slate-400 p-4 rounded-xl">
-              <h1 className="font-bold text-2xl text-white text-center bg-yellow-500 w-40 lg:w-60 p-1 rounded mb-5">
+            <div>
+              <h1 className="font-bold text-lg text-yellow-500 w-40 lg:w-60  rounded mb-2">
                 Category
               </h1>
               <div className="buttons-container">
@@ -138,11 +138,11 @@ function ProductsPage() {
                       value={category}
                       checked={selectedFilters.includes(category)}
                       onChange={() => handleFilterChange(category)}
-                      className="form-checkbox text-yellow-500"
+                      className="form-checkbox text-yellow-500 shrink-0 mt-0.5 border-gray-200 rounded focus:ring-yellow-600 disabled:opacity-50 disabled:pointer-events-none"
                     />
                     <label
                       htmlFor={`filter-${idx}`}
-                      className="ml-2 text-md font-semibold text-slate-700"
+                      className="ml-2 text-md font-semibold text-slate-700 shrink-0 mt-0.5 border-gray-200 rounded focus:ring-yellow-600 disabled:opacity-50 disabled:pointer-events-none"
                     >
                       {category}
                     </label>
@@ -160,7 +160,7 @@ function ProductsPage() {
         </div>
 
         <div className="grid place-content-center col-span-3">
-          <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-14 mx-4 my-5">
+          <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-14 mx-4 my-5">
             {currentPosts.map((product: TProducts) => (
               <ProductCard key={product._id} product={product} />
             ))}
