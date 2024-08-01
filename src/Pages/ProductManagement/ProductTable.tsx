@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState, useEffect } from "react";
 import {
   useGetProductsQuery,
@@ -8,23 +9,22 @@ import { TProducts } from "@/Types/ProductsTypes";
 import { FaRegEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import { Link } from "react-router-dom";
+import Pagination from "@/utils/Pagination";
+import toast from "react-hot-toast";
 
 const ProductTable = () => {
   const { data } = useGetProductsQuery({});
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [postsPerPage] = useState<number>(10);
   const products = data?.data || [];
   const [productList, setProductList] = useState(products);
   const [deleteProduct] = useDeleteProductMutation();
   const [
     updateProduct,
-    {
-      isLoading: isUpdating,
-      isError: updateError,
-      isSuccess: updateSuccess,
-      error: updateErrorDetail,
-    },
+    { isLoading: isUpdating, isError: updateError, isSuccess: updateSuccess },
   ] = useUpdateProductMutation();
 
-  const [editProduct, setEditProduct] = useState<TProducts | null>(null); // State for the product being edited
+  const [editProduct, setEditProduct] = useState<TProducts | null>(null);
 
   useEffect(() => {
     setProductList(products);
@@ -33,7 +33,9 @@ const ProductTable = () => {
   const handleDelete = async (id: string) => {
     try {
       await deleteProduct(id).unwrap();
-      setProductList(productList.filter((product:TProducts) => product._id !== id));
+      setProductList(
+        productList.filter((product: TProducts) => product._id !== id)
+      );
     } catch (error) {
       console.error("Failed to delete the product:", error);
     }
@@ -54,22 +56,21 @@ const ProductTable = () => {
       }).unwrap();
       console.log("Product updated successfully");
       setProductList(
-        productList.map((product:TProducts) =>
+        productList.map((product: TProducts) =>
           product._id === editProduct._id ? editProduct : product
         )
       );
       setEditProduct(null);
     } catch (err) {
       console.error("Failed to update the product:", err);
-      // Enhanced error handling
+
       if (err instanceof Error) {
         console.error("Error message:", err.message);
-      } else if (typeof err === 'object' && err !== null) {
-        // Handle cases where error is an object
-        if ('data' in err) {
+      } else if (typeof err === "object" && err !== null) {
+        if ("data" in err) {
           console.error("Server response:", (err as any).data);
         }
-        if ('status' in err) {
+        if ("status" in err) {
           console.error("Status code:", (err as any).status);
         }
       } else {
@@ -78,13 +79,25 @@ const ProductTable = () => {
     }
   };
 
+  const lastPostIndex = currentPage * postsPerPage;
+  const firstPostIndex = lastPostIndex - postsPerPage;
+  const currentPosts = productList.slice(firstPostIndex, lastPostIndex);
+
+  const notifyRemove = () => toast.error("Equipment has been removed");
+
+  useEffect(() => {
+    if (updateError) {
+      toast.error("Failed to update the product");
+    } else if (updateSuccess) {
+      toast.success("Product has been updated successfully");
+    }
+  }, [updateError, updateSuccess]);
+
   return (
     <div>
       <div className="ml-20">
         <Link to={`/newProduct`}>
-          <button
-            className="relative h-10 w-44 origin-top transform rounded-lg border-2 border-yellow-500 text-md text-yellow-500 before:absolute before:top-0 before:block before:h-0 before:w-full before:duration-500 hover:text-white hover:before:absolute hover:before:left-0 hover:before:-z-10 hover:before:h-full hover:before:bg-yellow-500"
-          >
+          <button className="relative h-10 w-44 origin-top transform rounded-lg border-2 border-yellow-500 text-md text-yellow-500 before:absolute before:top-0 before:block before:h-0 before:w-full before:duration-500 hover:text-white hover:before:absolute hover:before:left-0 hover:before:-z-10 hover:before:h-full hover:before:bg-yellow-500">
             Add new product
           </button>
         </Link>
@@ -106,7 +119,7 @@ const ProductTable = () => {
             </tr>
           </thead>
           <tbody>
-            {productList.map((product: TProducts) => (
+            {currentPosts.map((product: TProducts) => (
               <tr
                 key={product._id}
                 className="hover:bg-gray-50 border-b transition duration-300"
@@ -136,12 +149,14 @@ const ProductTable = () => {
                   </button>
                 </td>
                 <td className="py-4 px-6 border-b text-end">
-                  <button
-                    className="bg-red-600 hover:scale-110 scale-100 transition-all duration-100 text-white py-2 px-4 rounded-md"
-                    onClick={() => handleDelete(product._id)}
-                  >
-                    <MdDelete />
-                  </button>
+                  <div onClick={notifyRemove}>
+                    <button
+                      className="bg-red-600 hover:scale-110 scale-100 transition-all duration-100 text-white py-2 px-4 rounded-md"
+                      onClick={() => handleDelete(product._id)}
+                    >
+                      <MdDelete />
+                    </button>
+                  </div>
                 </td>
               </tr>
             ))}
@@ -264,29 +279,22 @@ const ProductTable = () => {
               <div className="flex justify-end">
                 <button
                   type="submit"
-                  className="px-4 py-2 bg-slate-500 text-white rounded-md hover:bg-slate-600"
+                  className="px-4 py-2 bg-yellow-500 text-white rounded-md hover:bg-yellow-600"
                   disabled={isUpdating}
                 >
                   {isUpdating ? "Updating..." : "Update Product"}
                 </button>
               </div>
-              {updateError && (
-                <p className="text-red-500 mt-2">
-                  Failed to update the product:{" "}
-                  {updateErrorDetail instanceof Error
-                    ? updateErrorDetail.message
-                    : "Unknown error"}
-                </p>
-              )}
-              {updateSuccess && (
-                <p className="text-green-500 mt-2">
-                  Product updated successfully!
-                </p>
-              )}
             </form>
           </div>
         </div>
       )}
+      <Pagination
+        totalPosts={productList.length}
+        postsPerPage={postsPerPage}
+        setCurrentPage={setCurrentPage}
+        currentPage={currentPage}
+      ></Pagination>
     </div>
   );
 };

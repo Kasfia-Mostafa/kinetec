@@ -4,7 +4,8 @@ export const baseApi = createApi({
   reducerPath: "baseApi",
   baseQuery: fetchBaseQuery({
     baseUrl:
-      "https://kinetec-server-gym.vercel.app/api",
+      // "https://kinetec-server-gym.vercel.app/api",
+      "http://localhost:5000/api"
   }),
   endpoints: (builder) => ({
     getProducts: builder.query({
@@ -41,7 +42,15 @@ export const baseApi = createApi({
         method: "DELETE",
       }),
     }),
+    createOrder: builder.mutation({
+      query: (newOrder) => ({
+        url: "/orders",
+        method: "POST",
+        body: newOrder,
+      }),
+    }),
   }),
+  
 });
 
 export const {
@@ -50,4 +59,5 @@ export const {
   useCreateProductMutation,
   useUpdateProductMutation,
   useDeleteProductMutation,
+  useCreateOrderMutation
 } = baseApi;

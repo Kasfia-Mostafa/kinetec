@@ -179,7 +179,7 @@ const AboutUsPage = () => {
                   </p>
                 </div>
 
-                <div className="p-4 bg-gray-100 rounded-b-xl md:px-7 dark:bg-neutral-800">
+                <div className="p-4 bg-yellow-100 rounded-b-xl md:px-7 dark:bg-neutral-800">
                   <div className="flex items-center">
                     <div className="flex-shrink-0">
                       <img
@@ -214,7 +214,7 @@ const AboutUsPage = () => {
                   </p>
                 </div>
 
-                <div className="p-4 bg-gray-100 rounded-b-xl md:px-7 dark:bg-neutral-800">
+                <div className="p-4 bg-yellow-100 rounded-b-xl md:px-7 dark:bg-neutral-800">
                   <div className="flex items-center">
                     <div className="flex-shrink-0">
                       <img
@@ -251,7 +251,7 @@ const AboutUsPage = () => {
                   </p>
                 </div>
 
-                <div className="p-4 bg-gray-100 rounded-b-xl md:px-7 dark:bg-neutral-800">
+                <div className="p-4 bg-yellow-100 rounded-b-xl md:px-7 dark:bg-neutral-800">
                   <div className="flex items-center">
                     <div className="flex-shrink-0">
                       <img

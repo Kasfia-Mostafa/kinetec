@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
 import Button from "@/utils/Button";
 
-
 const Cart = () => {
   const dispatch = useDispatch<AppDispatch>();
   const cartItems = useSelector((state: RootState) => state.cart.items);
@@ -35,7 +34,6 @@ const Cart = () => {
                     alt={item.name}
                     className="size-40 object-center object-cover md:block hidden"
                   />
-               
                 </div>
                 <div className="md:pl-3 md:w-8/12 2xl:w-3/4 flex flex-col justify-center">
                   <div className="flex items-center justify-between w-full">
@@ -83,12 +81,18 @@ const Cart = () => {
               </span>
             </div>
             <div>
-              <label className="font-medium inline-block mb-3 text-sm uppercase">
+              <label
+                htmlFor="promo"
+                className="font-semibold inline-block mb-3 text-sm uppercase"
+              >
                 Shipping
               </label>
-              <select className="block p-2 text-gray-600 w-full text-sm">
-                <option>Free</option>
-              </select>
+              <input
+                type="text"
+                id="promo"
+                placeholder="Free"
+                className="p-2 text-sm w-full bg-slate-50"
+              />
             </div>
             <div className="py-10">
               <label
@@ -116,9 +120,9 @@ const Cart = () => {
                 <span>${totalPrice.toFixed(2)}</span>
               </div>
               <div className="flex justify-center">
-               <Link to={`/payment`}>
-               <Button></Button>
-               </Link>
+                <Link to="/payment" state={{ totalPrice }}>
+                  <Button></Button>
+                </Link>
               </div>
             </div>
           </div>

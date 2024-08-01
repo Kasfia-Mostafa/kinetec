@@ -1,21 +1,29 @@
-import { useCreateProductMutation } from '@/redux/api/baseApi';
-import { useState } from 'react';
-import { ChangeEvent, FormEvent } from 'react';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { useCreateProductMutation } from "@/redux/api/baseApi";
+import { useEffect, useState } from "react";
+import { ChangeEvent, FormEvent } from "react";
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 const ProductManagement = () => {
   const [product, setProduct] = useState({
-    name: '',
-    image: '',
-    price: '',
-    quantity: '',
-    rating: '',
-    description: '',
-    category: ''
+    name: "",
+    image: "",
+    price: "",
+    quantity: "",
+    rating: "",
+    description: "",
+    category: "",
   });
+  const navigate = useNavigate();
+  const [
+    createProduct,
+    { isLoading, isError: addError, isSuccess: addSuccess },
+  ] = useCreateProductMutation();
 
-  const [createProduct, { isLoading, isError, isSuccess, error }] = useCreateProductMutation();
-
-  const handleChange = (e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setProduct((prevProduct) => ({
       ...prevProduct,
@@ -25,55 +33,65 @@ const ProductManagement = () => {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
-   
+
     const productToSubmit = {
       ...product,
-      price: parseFloat(product.price), 
-      rating: parseFloat(product.rating), 
-      quantity: parseInt(product.quantity, 10), 
+      price: parseFloat(product.price),
+      rating: parseFloat(product.rating),
+      quantity: parseInt(product.quantity, 10),
     };
 
     try {
       const result = await createProduct(productToSubmit).unwrap();
-      console.log('Product added successfully:', result);
+      console.log("Product added successfully:", result);
       setProduct({
-        name: '',
-        image: '',
-        price: '',
-        quantity: '',
-        rating: '',
-        description: '',
-        category: ''
+        name: "",
+        image: "",
+        price: "",
+        quantity: "",
+        rating: "",
+        description: "",
+        category: "",
       });
+      navigate("/productManagement");
     } catch (err) {
-      console.error('Failed to save the product:', err);
-      
+      console.error("Failed to save the product:", err);
+
       // Enhanced error handling
       if (err instanceof Error) {
-        console.error('Error message:', err.message);
+        console.error("Error message:", err.message);
       } else {
-        console.error('An unknown error occurred:', err);
+        console.error("An unknown error occurred:", err);
       }
-      
+
       // Additional checks based on the structure of the error
-      if (err && typeof err === 'object') {
-        if ('data' in err) {
-          console.error('Server response:', (err as any).data);
+      if (err && typeof err === "object") {
+        if ("data" in err) {
+          console.error("Server response:", (err as any).data);
         }
-        if ('status' in err) {
-          console.error('Status code:', (err as any).status);
+        if ("status" in err) {
+          console.error("Status code:", (err as any).status);
         }
       }
     }
   };
 
+  useEffect(() => {
+    if (addError) {
+      toast.error("Failed to add the product");
+    } else if (addSuccess) {
+      toast.success("Product has been add successfully");
+    }
+  }, [addError, addSuccess]);
+
   return (
-    <div className='mx-3'>
+    <div className="mx-3">
       <div className="flex justify-center">
         <div className="w-[600px] space-y-6 rounded-lg border bg-white p-10 shadow-lg">
           <div className="flex flex-col space-y-1">
-            <h3 className="text-3xl font-bold tracking-tight">Add New Product</h3>
+            <h3 className="text-3xl font-bold tracking-tight">
+              Add New Product
+            </h3>
             <p className="text-sm text-zinc-500 dark:text-zinc-400">
               Please fill in the form to add a new product.
             </p>
@@ -81,7 +99,10 @@ const ProductManagement = () => {
           <div>
             <form className="space-y-6" onSubmit={handleSubmit}>
               <div className="space-y-2 text-sm">
-                <label className="text-sm font-medium leading-none text-zinc-700 dark:text-zinc-300" htmlFor="name">
+                <label
+                  className="text-sm font-medium leading-none text-zinc-700 dark:text-zinc-300"
+                  htmlFor="name"
+                >
                   Product Name
                 </label>
                 <input
@@ -96,7 +117,10 @@ const ProductManagement = () => {
                 />
               </div>
               <div className="space-y-2 text-sm">
-                <label className="text-sm font-medium leading-none text-zinc-700 dark:text-zinc-300" htmlFor="image">
+                <label
+                  className="text-sm font-medium leading-none text-zinc-700 dark:text-zinc-300"
+                  htmlFor="image"
+                >
                   Image URL
                 </label>
                 <input
@@ -111,7 +135,10 @@ const ProductManagement = () => {
                 />
               </div>
               <div className="space-y-2 text-sm">
-                <label className="text-sm font-medium leading-none text-zinc-700 dark:text-zinc-300" htmlFor="price">
+                <label
+                  className="text-sm font-medium leading-none text-zinc-700 dark:text-zinc-300"
+                  htmlFor="price"
+                >
                   Price
                 </label>
                 <input
@@ -127,7 +154,10 @@ const ProductManagement = () => {
                 />
               </div>
               <div className="space-y-2 text-sm">
-                <label className="text-sm font-medium leading-none text-zinc-700 dark:text-zinc-300" htmlFor="quantity">
+                <label
+                  className="text-sm font-medium leading-none text-zinc-700 dark:text-zinc-300"
+                  htmlFor="quantity"
+                >
                   Quantity
                 </label>
                 <input
@@ -142,7 +172,10 @@ const ProductManagement = () => {
                 />
               </div>
               <div className="space-y-2 text-sm">
-                <label className="text-sm font-medium leading-none text-zinc-700 dark:text-zinc-300" htmlFor="rating">
+                <label
+                  className="text-sm font-medium leading-none text-zinc-700 dark:text-zinc-300"
+                  htmlFor="rating"
+                >
                   Rating
                 </label>
                 <input
@@ -160,7 +193,10 @@ const ProductManagement = () => {
                 />
               </div>
               <div className="space-y-2 text-sm">
-                <label className="text-sm font-medium leading-none text-zinc-700 dark:text-zinc-300" htmlFor="description">
+                <label
+                  className="text-sm font-medium leading-none text-zinc-700 dark:text-zinc-300"
+                  htmlFor="description"
+                >
                   Description
                 </label>
                 <textarea
@@ -174,7 +210,10 @@ const ProductManagement = () => {
                 />
               </div>
               <div className="space-y-2 text-sm">
-                <label className="text-sm font-medium leading-none text-zinc-700 dark:text-zinc-300" htmlFor="category">
+                <label
+                  className="text-sm font-medium leading-none text-zinc-700 dark:text-zinc-300"
+                  htmlFor="category"
+                >
                   Category
                 </label>
                 <input
@@ -190,30 +229,17 @@ const ProductManagement = () => {
               </div>
               <button
                 type="submit"
-                className="rounded-md bg-sky-500 px-4 py-2 text-white transition-colors hover:bg-sky-600 dark:bg-sky-700"
-                disabled={isLoading} // Disable button while loading
+                className="rounded-md bg-yellow-500 px-4 py-2 text-white transition-colors hover:bg-yellow-600 "
+                disabled={isLoading}
               >
-                {isLoading ? 'Submitting...' : 'Submit'}
+                {isLoading ? "Submitting..." : "Submit"}
               </button>
-              {isError && <p className="text-red-500">Failed to add the product: {getErrorMessage(error)}</p>}
-              {isSuccess && <p className="text-green-500">Product added successfully!</p>}
             </form>
           </div>
         </div>
       </div>
     </div>
   );
-};
-
-// Function to get a user-friendly error message
-const getErrorMessage = (error: unknown): string => {
-  if (error instanceof Error) {
-    return error.message;
-  } else if (typeof error === 'object' && error !== null) {
-    // Assuming the error object might have 'message' property
-    return (error as any).message || 'An unknown error occurred';
-  }
-  return 'An unknown error occurred';
 };
 
 export default ProductManagement;
