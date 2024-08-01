@@ -22,7 +22,7 @@ const Category = () => {
   const categories: string[] = [...new Set(products.map((product) => product.category))];
 
   return (
-    <div className="my-80 grid place-content-center">
+    <div className="mt-60 mb-20 grid place-content-center">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
         {categories.map((category: string, index: number) => (
           <div key={index} onClick={() => handleCategoryClick(category)}>

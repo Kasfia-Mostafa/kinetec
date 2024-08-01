@@ -1,5 +1,8 @@
 # Gym Equipment Responsive Website
 
+### Live : https://kinetec.vercel.app/
+
+
 ## Overview
 This project is a responsive website for gym equipment where users can:
 - Add, remove, and update products

@@ -3,9 +3,8 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const baseApi = createApi({
   reducerPath: "baseApi",
   baseQuery: fetchBaseQuery({
-    baseUrl:
-      // "https://kinetec-server-gym.vercel.app/api",
-      "http://localhost:5000/api"
+    baseUrl: "https://kinetec-server-gym.vercel.app/api",
+    // "http://localhost:5000/api"
   }),
   endpoints: (builder) => ({
     getProducts: builder.query({
@@ -50,7 +49,6 @@ export const baseApi = createApi({
       }),
     }),
   }),
-  
 });
 
 export const {
@@ -59,5 +57,5 @@ export const {
   useCreateProductMutation,
   useUpdateProductMutation,
   useDeleteProductMutation,
-  useCreateOrderMutation
+  useCreateOrderMutation,
 } = baseApi;

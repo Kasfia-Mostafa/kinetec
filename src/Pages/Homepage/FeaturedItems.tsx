@@ -15,7 +15,9 @@ const FeaturedItems = () => {
   return (
     <div>
       <div className="flex justify-center flex-col h-[800px]">
-        <h1 className="text-left underline text-3xl ml-40 mb-8 text-yellow-600 font-bold">Featured</h1>
+        <h1 className="text-left underline text-3xl ml-40 mb-8 text-yellow-600 font-bold">
+          Featured
+        </h1>
         <Swiper
           breakpoints={{
             340: {
@@ -36,11 +38,10 @@ const FeaturedItems = () => {
         >
           {products.slice(0, 10).map((item: TProducts) => (
             <SwiperSlide key={item._id}>
-              <div
-                className="flex flex-col gap-6 mb-20 group relative shadow-lg
-               text-white rounded-xl px-6 py-8 h-[200px] w-[215px] 
-               lg:h-[250px] lg:w-[350px] overflow-hidden cursor-pointer"
-              >
+              <div className="grid gap-6 mb-8 group relative 
+              shadow-lg text-white rounded-xl p-6 h-[200px] 
+              w-full sm:w-[400px] md:w-[450px] lg:h-[250px] 
+              lg:w-[350px] overflow-hidden cursor-pointer">
                 <div>
                   <img
                     width={200}
@@ -62,14 +63,12 @@ const FeaturedItems = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-       <Link to={`/products`}>
-       <div className="mr-56 gap-2 flex items-end justify-end text-xl text-yellow-500 font-bold">
-       <h1>See more</h1>
-        <FaArrowRightLong />
-       </div>
-       </Link>
-
-
+        <Link to={`/products`}>
+          <div className="mr-56 gap-2 flex items-end justify-end text-xl text-yellow-500 font-bold">
+            <h1>See more</h1>
+            <FaArrowRightLong />
+          </div>
+        </Link>
       </div>
     </div>
   );

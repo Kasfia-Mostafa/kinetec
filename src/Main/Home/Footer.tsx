@@ -8,7 +8,7 @@ const Footer = () => {
         <div>
           <a className="flex justify-center">
             <p className="flex gap-2 bg-gradient-to-tr from-yellow-600 to-amber-300 py-2 px-3 rounded font-kinetec text-slate-100 w-48">
-              <img src="/src/assets/dumbell.ico" className="size-5" alt="" />
+              <img src="https://i.ibb.co/vccH9GS/dumbell-3.png" className="size-5" alt="" />
               Kinetec
             </p>
           </a>

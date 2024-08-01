@@ -1,7 +1,7 @@
 import { useGetProductsQuery } from "@/redux/api/baseApi";
 import Loader from "../../utils/Loader";
 import ProductCard from "./ProductCard";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import Pagination from "@/utils/Pagination";
 import { TProducts } from "@/Types/ProductsTypes";
 import { useSearchParams } from "react-router-dom";
@@ -22,11 +22,7 @@ const ProductsPage = () => {
 
   const filters: string[] = ["Strength Training", "Cardio Equipment", "Yoga & Pilates"];
 
-  useEffect(() => {
-    filterItems();
-  }, [selectedFilters, products, searchedItems, sortOrder, category]);
-
-  const filterItems = () => {
+  const filterItems = useCallback(() => {
     let tempItems = [...products];
 
     if (category) {
@@ -41,10 +37,14 @@ const ProductsPage = () => {
       tempItems = tempItems.filter(product => product.name.toLowerCase().includes(searchedItems.toLowerCase()));
     }
 
-    tempItems.sort((a, b) => sortOrder === "asc" ? a.price - b.price : b.price - a.price);
+    tempItems.sort((a, b) => (sortOrder === "asc" ? a.price - b.price : b.price - a.price));
 
     setFilteredItems(tempItems);
-  };
+  }, [products, category, selectedFilters, searchedItems, sortOrder]);
+
+  useEffect(() => {
+    filterItems();
+  }, [filterItems]);
 
   const handleFilterChange = (selectedCategory: string) => {
     setSelectedFilters(prevFilters =>
@@ -73,7 +73,7 @@ const ProductsPage = () => {
 
   return (
     <section>
-      <div className="grid grid-flow-col">
+      <div className="grid grid-flow-row lg:grid-flow-col">
         <div className="col-span-1 mb-10">
           <div className="ml-6 lg:ml-10 mb-10">
             <form>
